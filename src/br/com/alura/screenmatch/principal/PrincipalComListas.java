@@ -42,6 +42,28 @@ public class PrincipalComListas {
         //Variavel referencia é o que a gente usa para chegar até um objeto, note que dá para a gente utilizar os metodos do mesmo
         //Na realidade é o mesmo objeto
         System.out.println(filmeVariante.getNome() + " e " + referenciaParaOMesmoLocalDoFilmeVariante.getNome());
+        System.out.println("//////////////////");
+        //Desafio
+        Filme matrix = new Filme("Matrix", 1999);
+        matrix.avalia(10);
+        Filme deadpool3 = new Filme("Deadpool 3", 2024);
+        deadpool3.avalia(4);
+        Serie onePiece = new Serie("One Piece", 1997);
+        onePiece.avalia(10);
+
+        ArrayList<Titulo> vouAssistir = new ArrayList<>();
+        vouAssistir.add(matrix);
+        vouAssistir.add(deadpool3);
+        vouAssistir.add(onePiece);
+        for(Titulo titulo : vouAssistir) {
+            System.out.println(titulo.getNome());
+            if(titulo instanceof Filme filme) {
+                System.out.println("Classificação: " + filme.getClassificacao());
+            } else {
+                System.out.println("Série não tem classificação");
+            }
+        }
+
     }
 
 }
