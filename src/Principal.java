@@ -68,6 +68,12 @@ public class Principal {
         System.out.println("Primeiro filme: " + listaDeFilmes.get(0).getNome());
         //Poderiamos quebrar também, como por exemplo:
         var segundoFilme = listaDeFilmes.get(1);
-        System.out.println("Segundo filme: " + segundoFilme.getNome()); //Só para entender, pq ninguém utiliza na prática
+        segundoFilme = listaDeFilmes.get(2); //Aqui mudamos o indice do segundo para o terceiro
+        System.out.println("Terceiro filme: " + segundoFilme.getNome()); //Só para entender, pq ninguém utiliza na prática
+        //Mas por que foi imprimido a lista certinho, sendo que não utilizei o toString aqui?
+        //Por padrão o arrayList usa o toString em cada item do array
+        //toString foi reescrito na classe Filme
+        System.out.println("Imprimindo lista: " + listaDeFilmes);
+        System.out.println("toString do filme: " + listaDeFilmes.get(0).toString());
     }
 }
