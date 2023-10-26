@@ -6,6 +6,12 @@ public class Serie extends Titulo {
     private int episodiosPorTemporada;
     private int minutosPorEpisodio;
 
+    //Temos que criar esse construtor, pois por padrão ele vem construtor default do Object, quando não utilizamos as
+    //o construtor com as variaveis da mãe, ele dá erro, temos que herdar o construtor também
+    public Serie(String nome, int anoDeLancamento) {
+        super(nome, anoDeLancamento);
+    }
+
     public int getTemporadas() {
         return temporadas;
     }
