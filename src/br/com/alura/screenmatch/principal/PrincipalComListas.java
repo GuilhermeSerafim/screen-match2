@@ -57,7 +57,7 @@ public class PrincipalComListas {
         vouAssistir.add(onePiece);
         for(Titulo titulo : vouAssistir) {
             System.out.println(titulo.getNome());
-            if(titulo instanceof Filme filme) {
+            if(titulo instanceof Filme filme) { // Se essa verificação for verdadeira, a variável filme é declarada e o objeto titulo é implicitamente convertido (cast) para a classe Filme.
                 System.out.println("Classificação: " + filme.getClassificacao());
             } else {
                 System.out.println("Série não tem classificação");
