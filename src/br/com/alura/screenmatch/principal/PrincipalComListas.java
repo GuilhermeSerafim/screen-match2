@@ -34,6 +34,14 @@ public class PrincipalComListas {
                 System.out.println("Não tem classificação");
             }//Abordamos essa prática, pois podemos ver isso ainda em muito código
         }
+        //Aqui estamos criando uma variavel filmeVariante que se referencia ao mesmo lugar que o
+        //referenciaParaOMesmoLocalDoFilmeVariante se referencia(ou apontam), não estamos copiando o objeto
+        //Logo, na realidade é o mesmo lugar de referencia do objeto
+        var filmeVariante = new Filme("Qualquer filme", 2021);
+        Filme referenciaParaOMesmoLocalDoFilmeVariante = filmeVariante;
+        //Variavel referencia é o que a gente usa para chegar até um objeto, note que dá para a gente utilizar os metodos do mesmo
+        //Na realidade é o mesmo objeto
+        System.out.println(filmeVariante.getNome() + " e " + referenciaParaOMesmoLocalDoFilmeVariante.getNome());
     }
 
 }
