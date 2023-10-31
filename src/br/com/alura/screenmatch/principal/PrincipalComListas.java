@@ -55,6 +55,7 @@ public class PrincipalComListas {
         vouAssistir.add(matrix);
         vouAssistir.add(deadpool3);
         vouAssistir.add(onePiece);
+        //foreach
         for(Titulo titulo : vouAssistir) {
             System.out.println(titulo.getNome());
             if(titulo instanceof Filme filme) { // Se essa verificação for verdadeira, a variável filme é declarada e o objeto titulo é implicitamente convertido (cast) para a classe Filme.
@@ -64,6 +65,27 @@ public class PrincipalComListas {
             }
         }
 
-    }
+        System.out.println("////////////////");
+        //for tradicional
+        for (int i = 0; i < vouAssistir.size(); i++ ) {
+            Titulo titulo = vouAssistir.get(i);
+            System.out.println(titulo.getNome());
+            if (titulo instanceof Filme) {
+                Filme filme = (Filme) titulo;
+                System.out.println("Classificação: " + filme.getClassificacao());
+            } else {
+                System.out.println("Série não tem classificação");
+            }
+            //Embora o loop for each seja mais legível e fácil de usar para iterar sobre coleções, o loop for tradicional é útil quando você precisa acessar elementos por índices ou
+            // quando deseja ter mais controle sobre a iteração. Certifique-se de que o índice i esteja dentro dos limites da lista para evitar exceções de índice fora do intervalo.
+        }
+        System.out.println("////////////////");
+        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Adam Sandler");
+        buscaPorArtista.add("Paulo");
+        buscaPorArtista.add("Jaqueline");
+        buscaPorArtista.add("Guilherme");
+        System.out.println(buscaPorArtista);
 
+    }
 }
