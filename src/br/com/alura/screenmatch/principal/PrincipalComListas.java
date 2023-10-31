@@ -91,9 +91,10 @@ public class PrincipalComListas {
         Collections.sort(buscaPorArtista);
         System.out.println("Depois da ordenação");
         System.out.println(buscaPorArtista);
-        //Vamos imprimir nossa lista então
+        System.out.println("///////////");
+        System.out.println(lista);
         Collections.sort(lista); //Não vai funcionar pois nossa lista não tem um criterio de ordenação
-        //Ou seja, esse o sort, ele aceita listas de objetos que obrigatoriamente saibam se comparar um com o outro
+        //Ou seja, esse o sort, ele aceita listas de objetos que obrigatoriamente saiba
 
     }
 }
