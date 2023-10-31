@@ -7,6 +7,7 @@ import br.com.alura.screenmatch.modelos.Titulo;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -17,12 +18,14 @@ public class PrincipalComListas {
         Filme filmeDoPaulo = new Filme("Dogville", 2003);
         filmeDoPaulo.avalia(10);
         Serie lost = new Serie("Lost", 2000);
+        Filme aliens = new Filme("Aliens VS Humanos", 2000); //Como usamos 2 criterios de comparar para exibir sequencialmente, esse será exibido primeiro que o Lost
 
         ArrayList<Titulo> lista = new ArrayList<>();
         lista.add(filmeDoPaulo);
         lista.add(meuFilme);
         lista.add(outroFilme);
         lista.add(lost);
+        lista.add(aliens);
         for (Titulo item : lista) {
             System.out.println(item.getNome());
             //Usar instanceof e casting desse modo geralmente indica que
@@ -95,6 +98,13 @@ public class PrincipalComListas {
         System.out.println(lista);
         Collections.sort(lista); //Não vai funcionar pois nossa lista não tem um criterio de ordenação
         //Ou seja, esse o sort, ele aceita listas de objetos que obrigatoriamente saiba
+        System.out.println("Depois da ordenação por ordem alfabética: ");
+        System.out.println(lista);
+        
+        //Maneira moderna de se ordenar no Java
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Depois da ordenação por ano de lançamento: ");
+        System.out.println(lista);
 
     }
 }
