@@ -5,6 +5,8 @@ import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -85,7 +87,13 @@ public class PrincipalComListas {
         buscaPorArtista.add("Paulo");
         buscaPorArtista.add("Jaqueline");
         buscaPorArtista.add("Guilherme");
+        System.out.println(buscaPorArtista); //Aqui é imprimido na ordem que o item foi adicionado
+        Collections.sort(buscaPorArtista);
+        System.out.println("Depois da ordenação");
         System.out.println(buscaPorArtista);
+        //Vamos imprimir nossa lista então
+        Collections.sort(lista); //Não vai funcionar pois nossa lista não tem um criterio de ordenação
+        //Ou seja, esse o sort, ele aceita listas de objetos que obrigatoriamente saibam se comparar um com o outro
 
     }
 }
