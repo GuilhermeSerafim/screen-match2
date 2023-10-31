@@ -102,6 +102,7 @@ public class PrincipalComListas {
         System.out.println(lista);
         
         //Maneira moderna de se ordenar no Java
+        // Usando um comparador com uma expressão lambda para ordenar por ano de lançamento.
         lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
         System.out.println("Depois da ordenação por ano de lançamento: ");
         System.out.println(lista);
