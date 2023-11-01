@@ -83,8 +83,9 @@ public class PrincipalComListas {
         }
         System.out.println("////////////////");
         //Deixando código mais generico
-        //Uma LinkedList é especialmente eficiente para operações de inserção e remoção em comparação com um ArrayList
-        List<String> buscaPorArtista = new LinkedList<>();
+        //Mudamos porque O acesso aos elementos pelo índice é menos eficiente do que em um ArrayList.
+        // Para acessar um elemento em uma LinkedList, você precisa percorrer a lista a partir do início ou do fim até chegar à posição desejada.
+        List<String> buscaPorArtista = new ArrayList<>();
         buscaPorArtista.add("Adam Sandler");
         buscaPorArtista.add("Paulo");
         buscaPorArtista.add("Jaqueline");
