@@ -34,6 +34,7 @@ public class Principal {
         System.out.println("***********************");
         System.out.println("COMPRAS REALIZADAS:\n");
         Collections.sort(cartao.getCompras());
+        //Percorrendo o arrayList para mostrar ambos valores e descrição
         for (Compra c : cartao.getCompras()) {
             System.out.println(c.getDescricao() + " - " +c.getValor());
         }
