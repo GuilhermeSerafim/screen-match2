@@ -26,7 +26,7 @@ public class PrincipalComListas {
         for (Titulo item : lista) {
             System.out.println(item.getNome());
             //Usar instanceof e casting desse modo geralmente indica que
-            // o código não está tirando total proveito do polimorfismo e do design orientado a objetos.
+            // o código não tira total proveito do polimorfismo e do design orientado a objetos.
             // É preferível projetar o código de maneira que seja possível evitar a necessidade de usar instanceof realizar castings explícitos.
             if (item instanceof Filme filme && filme.getClassificacao() > 2) { //Note que tem como colocarmos mais verificações
                 //Já perguntamos e já declaramos a variavel
@@ -38,7 +38,7 @@ public class PrincipalComListas {
         }
         //Aqui estamos criando uma variavel filmeVariante que se referencia ao mesmo lugar que o
         //referenciaParaOMesmoLocalDoFilmeVariante se referencia(ou apontam), não estamos copiando o objeto
-        //Logo, na realidade é o mesmo lugar de referencia do objeto
+        //Logo, na realidade é o mesmo lugar de referência do objeto
         var filmeVariante = new Filme("Qualquer filme", 2021);
         Filme referenciaParaOMesmoLocalDoFilmeVariante = filmeVariante;
         //Variavel referencia é o que a gente usa para chegar até um objeto, note que dá para a gente utilizar os metodos do mesmo
@@ -72,15 +72,15 @@ public class PrincipalComListas {
         for (int i = 0; i < vouAssistir.size(); i++ ) {
             Titulo titulo = vouAssistir.get(i);
             System.out.println(titulo.getNome());
-            if (titulo instanceof Filme) {
-                Filme filme = (Filme) titulo;
+            if (titulo instanceof Filme filme) {
                 System.out.println("Classificação: " + filme.getClassificacao());
             } else {
                 System.out.println("Série não tem classificação");
             }
-            //Embora o loop for each seja mais legível e fácil de usar para iterar sobre coleções, o loop for tradicional é útil quando você precisa acessar elementos por índices ou
+            //Embora o ‘loop’ for each seja mais legível e fácil de usar para iterar sobre coleções, o loop for tradicional é útil quando você precisa acessar elementos por índices ou
             // quando deseja ter mais controle sobre a iteração. Certifique-se de que o índice i esteja dentro dos limites da lista para evitar exceções de índice fora do intervalo.
         }
+
         System.out.println("////////////////");
         //Deixando código mais generico
         //Mudamos porque O acesso aos elementos pelo índice é menos eficiente do que em um ArrayList.
@@ -88,23 +88,25 @@ public class PrincipalComListas {
         List<String> buscaPorArtista = new ArrayList<>();
         buscaPorArtista.add("Adam Sandler");
         buscaPorArtista.add("Paulo");
-        buscaPorArtista.add("Jaqueline");
+        buscaPorArtista.add("Jaqueline");   
         buscaPorArtista.add("Guilherme");
-        System.out.println(buscaPorArtista); //Aqui é imprimido na ordem que o item foi adicionado
+        System.out.println(buscaPorArtista); //Aqui é impresso na ordem que o ‘item’ foi adicionado
         Collections.sort(buscaPorArtista);
         System.out.println("Depois da ordenação");
         System.out.println(buscaPorArtista);
         System.out.println("///////////");
+
         System.out.println(lista);
-        Collections.sort(lista); //Não vai funcionar pois nossa lista não tem um criterio de ordenação
-        //Ou seja, esse o sort, ele aceita listas de objetos que obrigatoriamente saiba
+        Collections.sort(lista); //Não vai funcionar sem implemnentar a interface comparable para ordenar
+        //Ou seja, esse o sort, ele aceita listas de objetos que obrigatoriamente saibam se comparar para ter uma ordem natural
         System.out.println("Depois da ordenação por ordem alfabética: ");
         System.out.println(lista);
         
         //Maneira moderna de se ordenar no Java
         // Usando um comparador com uma expressão lambda para ordenar por ano de lançamento.
-        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
-        System.out.println("Depois da ordenação por ano de lançamento: ");
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento).reversed()); //reversed inverte a ordem
+        System.out.println("Depois da ordenação por ano de lançamento com alfabética: ");
+        System.out.println("Titulos mais recentes: ");
         System.out.println(lista);
 
     }
