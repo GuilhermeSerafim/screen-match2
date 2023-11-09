@@ -15,6 +15,17 @@ public class CartaoDeCredito {
         this.compras = new ArrayList<>();
     }
 
+    //Metodos
+    public boolean lancaCompra(Compra compra) {
+        if (this.saldo > compra.getValor()) {
+            saldo -= compra.getValor();
+            this.compras.add(compra);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     //Getters
     public double getLimite() {
         return limite;
